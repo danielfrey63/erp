@@ -5,13 +5,15 @@ services:
     depends_on:
       - db
     ports:
-      - "80:8069"
+      - 80:8069
     environment:
       - HOST=db
       - USER=admin
       - PASSWORD=zGJzdvbeLe2sxXzTLwM2uaS4CmQ2eT78pKNHfVrH
   db:
     image: postgres:latest
+    ports:
+      - 5432:5432
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=zGJzdvbeLe2sxXzTLwM2uaS4CmQ2eT78pKNHfVrH
